@@ -54,7 +54,8 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 
 const personSchema = new mongoose.Schema({
   name: String,
-  age: Number
+  age: Number,
+  favoriteFruit: fruitSchema
 });
 
 const Person = mongoose.model("Person", personSchema);
@@ -66,6 +67,12 @@ const Person = mongoose.model("Person", personSchema);
 //   age: 36
 // });
 
+
+// const person = new Person({
+//    name: "Mary",
+//    age: 22,
+//    favoriteFruit: pineapple
+//  });
 
 
 // Insert
@@ -100,28 +107,38 @@ Fruit.find(function (err, fruits) {
   }
 });
 
-// Update Documents  - Fill in id to Update name
+// Update Documents  - Fill in id to Update name to entered value
 
-Fruit.updateOne({
-  _id: ""
-}, {
-  name: ""
-}, function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Successful Update");
-  }
-});
+// Fruit.updateOne({
+//   _id: ""
+// }, {
+//   name: ""
+// }, function (err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Successful Update");
+//   }
+// });
 
-// Delete Documents - Fill in name to Delete
+// Delete Single Document from Fruits - Fill in name to Delete
 
-Fruit.deleteOne({
-  name: ""
-}, function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Successful Delete");
-  }
-});
+// Fruit.deleteOne({
+//   name: ""
+// }, function (err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Successful Delete");
+//   }
+// });
+
+// Delete Many from People - Fill in Name to Delete
+
+// Person.deleteMany({name: ""}, function(err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Successful Delete of all Matches");
+//   }
+// });
